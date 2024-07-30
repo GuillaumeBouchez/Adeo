@@ -21,7 +21,7 @@ describe("Process the command line arguments", () => {
   const ERROR =
   "The correct usage is node app.js --filter=VALUE, or node app.js --count, or node app.js --filter=VALUE --count";
 
-  it("should call filterAndCountAnimalsByPattern with correct filter value when both filter and count are enabled", () => {
+  it("should call filterAndCountAnimalsByPattern with correct filter value when both filter and count commands are enabled", () => {
     const args = ["node", "app.js", "--filter=lion", "--count"];
     processArgs(args);
     expect(filterAndCountAnimalsByPattern).toHaveBeenCalledWith("lion");
@@ -48,12 +48,20 @@ describe("Process the command line arguments", () => {
     expect(displayError).not.toHaveBeenCalled();
   });
 
-  it("should call filterAnimalDataByPattern with correct filter value when the filter command is passed", () => {
+  it("should display an error when a wrong filter command is passed", () => {
     const args = ["node", "app.js", "--test"];
     processArgs(args);
     expect(displayError).toHaveBeenCalledWith(ERROR);
     expect(filterAnimalsByPattern).not.toHaveBeenCalled();
     expect(countAnimalsAndPeople).not.toHaveBeenCalled();
+    expect(filterAndCountAnimalsByPattern).not.toHaveBeenCalledWith();
+  });
+  it("should display an error when a wrong filter command is passed", () => {
+    const args = ["node", "app.js", "--count", "--test"];
+    processArgs(args);
+    // expect(displayError).toHaveBeenCalledWith(ERROR);
+    expect(filterAnimalsByPattern).not.toHaveBeenCalled();
+    expect(countAnimalsAndPeople).toHaveBeenCalled();
     expect(filterAndCountAnimalsByPattern).not.toHaveBeenCalledWith();
   });
 });
