@@ -1,9 +1,9 @@
 const { data } = require("../../../ressources/data");
-const { filterAnimalDataByPattern } = require("../commands/filter");
+const { filterAnimalNameByPattern } = require("../commands/filter");
 const { countData } = require("../commands/count");
 
 const filterAnimalsByPattern = (pattern) => {
-  const filteredAnimals = filterAnimalDataByPattern(pattern, data);
+  const filteredAnimals = filterAnimalNameByPattern(pattern, data);
   console.dir(filteredAnimals, { depth: null });
   return filteredAnimals;
 };
@@ -15,9 +15,8 @@ const countAnimalsAndPeople = () => {
 };
 
 const filterAndCountAnimalsByPattern = (pattern) => {
-  const filteredAnimals = filterAnimalDataByPattern(pattern, data);
-  const countedAnimalsAndPeopleByCountry =
-  countData(filteredAnimals);
+  const filteredAnimals = filterAnimalNameByPattern(pattern, data);
+  const countedAnimalsAndPeopleByCountry = countData(filteredAnimals);
   console.dir(countedAnimalsAndPeopleByCountry, { depth: null });
   return filterAndCountAnimalsByPattern;
 };

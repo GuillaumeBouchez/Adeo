@@ -1,6 +1,6 @@
-const { filterAnimalDataByPattern } = require("../../src/app/commands/filter");
+const { filterAnimalNameByPattern } = require("../../src/app/commands/filter");
 
-describe(filterAnimalDataByPattern.name, () => {
+describe(filterAnimalNameByPattern.name, () => {
   const COUNTRY_A = "COUNTRY_A";
   const COUNTRY_B = "COUNTRY_B";
 
@@ -53,7 +53,7 @@ describe(filterAnimalDataByPattern.name, () => {
       },
     ];
 
-    const result = filterAnimalDataByPattern(A_PATTERN, A_NORMAL_INPUT);
+    const result = filterAnimalNameByPattern(A_PATTERN, A_NORMAL_INPUT);
 
     expect(result).toEqual(expectedValue);
   });
@@ -63,7 +63,7 @@ describe(filterAnimalDataByPattern.name, () => {
 
     const expectedValue = [];
 
-    const result = filterAnimalDataByPattern(A_PATTERN, A_NORMAL_INPUT);
+    const result = filterAnimalNameByPattern(A_PATTERN, A_NORMAL_INPUT);
 
     expect(result).toEqual(expectedValue);
   });
@@ -94,7 +94,7 @@ describe(filterAnimalDataByPattern.name, () => {
 
     const expectedValue = [];
 
-    const result = filterAnimalDataByPattern(A_PATTERN, AN_INPUT_WITH_NO_ANIMALS);
+    const result = filterAnimalNameByPattern(A_PATTERN, AN_INPUT_WITH_NO_ANIMALS);
 
     expect(result).toEqual(expectedValue);
   });

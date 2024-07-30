@@ -67,3 +67,13 @@ To filter the data on the `dog` pattern and then count the data, you could use :
 ```bash
 node app.js --filter=dog --count
 ```
+
+
+
+### Run the tests
+
+To launch the tests, you can use the following command : 
+
+```bash
+npm run test
+```

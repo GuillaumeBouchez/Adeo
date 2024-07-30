@@ -3,7 +3,7 @@ const {
   countAnimalsAndPeople,
   filterAndCountAnimalsByPattern,
   displayError,
-} = require("../src/app/controller/animals-controller");
+} = require("../src/app/controller/animals-controller.js");
 const { processArgs } = require("../app.js");
 const { ERROR } = require("../src/utils/command-line-values.js")
 
@@ -41,7 +41,7 @@ describe("Process the command line arguments", () => {
     expect(displayError).not.toHaveBeenCalled();
   });
 
-  it("should call filterAnimalDataByPattern with correct filter value when the filter command is passed", () => {
+  it("should call filterAnimalNameByPattern with correct filter value when the filter command is passed", () => {
     const args = ["node", "app.js", "--filter=lion"];
 
     processArgs(args);

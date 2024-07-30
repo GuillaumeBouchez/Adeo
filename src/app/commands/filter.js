@@ -1,4 +1,4 @@
-const filterAnimalDataByPattern = (pattern, data) => {
+const filterAnimalNameByPattern = (pattern, data) => {
   return data.reduce((accCountries, country) => {
     const filteredPeople = country.people.reduce((accPeople, people) => {
       const filteredAnimals = people.animals.filter((animal) =>
@@ -18,4 +18,4 @@ const filterAnimalDataByPattern = (pattern, data) => {
   }, []);
 };
 
-module.exports = { filterAnimalDataByPattern };
+module.exports = { filterAnimalNameByPattern };
