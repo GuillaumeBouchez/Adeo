@@ -11,7 +11,7 @@ describe(countData.name, () => {
   const ANIMAL_B = "ANIMAL_B";
   const ANIMAL_C = "ANIMAL_C";
 
-  it("Write the number of people after country names and the number of  after people's names ", () => {
+  it("should write the number of people after country names and the number of animals after people's names ", () => {
     const A_NORMAL_INPUT = [
       {
         name: COUNTRY_A,
@@ -65,7 +65,7 @@ describe(countData.name, () => {
     expect(result).toEqual(expectedValue);
   });
 
-  it("Can handle empty inputs", () => {
+  it("should be able to handle empty inputs", () => {
     const AN_EMPTY_INPUT = [];
 
     const expectedValue = [];
@@ -75,7 +75,7 @@ describe(countData.name, () => {
     expect(result).toEqual(expectedValue);
   });
 
-  it("Can handle people with no animals", () => {
+  it("should be able to handle people with no animals", () => {
     const AN_INPUT_WITH_NO_ANIMAL = [
       {
         name: COUNTRY_A,
@@ -105,7 +105,7 @@ describe(countData.name, () => {
     expect(result).toEqual(expectedValue);
   });
 
-  it("Can handle countries with no people", () => {
+  it("should be able to handle countries with no people", () => {
     const AN_INPUT_WITH_NO_PEOPLE = [
       {
         name: COUNTRY_A,

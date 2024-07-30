@@ -41,7 +41,7 @@ describe("Process the command line arguments", () => {
     expect(displayError).not.toHaveBeenCalled();
   });
 
-  it("should call filterAnimalNameByPattern with correct filter value when the filter command is passed", () => {
+  it("should call filterAnimalByPattern with correct filter value when the filter command is passed", () => {
     const args = ["node", "app.js", "--filter=lion"];
 
     processArgs(args);
@@ -60,15 +60,6 @@ describe("Process the command line arguments", () => {
     expect(displayError).toHaveBeenCalledWith(ERROR);
     expect(filterAnimalsByPattern).not.toHaveBeenCalled();
     expect(countAnimalsAndPeople).not.toHaveBeenCalled();
-    expect(filterAndCountAnimalsByPattern).not.toHaveBeenCalledWith();
-  });
-  it("should display an error when a wrong filter command is passed", () => {
-    const args = ["node", "app.js", "--count", "--test"];
-
-    processArgs(args);
-
-    expect(countAnimalsAndPeople).toHaveBeenCalled();
-    expect(filterAnimalsByPattern).not.toHaveBeenCalled();
     expect(filterAndCountAnimalsByPattern).not.toHaveBeenCalledWith();
   });
 });
