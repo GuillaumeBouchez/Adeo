@@ -5,10 +5,7 @@ const {
 	displayError
 } = require("./src/app/controller/animals-controller");
 
-const FILTER = "--filter=";
-const COUNT = "--count";
-const ERROR =
-  "The correct usage is node app.js --filter=VALUE, or node app.js --count, or node app.js --filter=VALUE --count";
+const { FILTER, COUNT, ERROR } = require("./src/utils/command-line-values")
 
 const processArgs = (argv) => {
 	const args = argv.slice(2);

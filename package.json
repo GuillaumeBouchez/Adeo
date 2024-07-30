@@ -2,10 +2,10 @@
   "name": "animalfilterandcounter",
   "version": "1.0.0",
   "description": "This CLI app has to filter a list of elements containing a pattern and count the number of people and animals",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "test": "jest",
-    "dev": "node main.js"
+    "dev": "node app.js"
   },
   "author": "Guillaume Bouchez",
   "license": "ISC",
